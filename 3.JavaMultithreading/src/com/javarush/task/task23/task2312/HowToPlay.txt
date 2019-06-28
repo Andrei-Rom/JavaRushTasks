@@ -1,0 +1,4 @@
+For Windows
+-cmd
+cd 'you directory with file'
+java -jar Snake.jar
