@@ -1,0 +1,8 @@
+For Windows
+-cmd
+cd 'you directory with file'
+java -jar Arkanoid.jar
+
+space button to start game
+right left buttons to control the platform
+good luck!
