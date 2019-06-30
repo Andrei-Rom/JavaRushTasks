@@ -24,5 +24,5 @@ public class FakeModel implements Model {
         users.add(new User("A", 1 ,1));
         users.add(new User("B", 1, 1));
         modelData.setUsers(users);
-    }
+}
 }
