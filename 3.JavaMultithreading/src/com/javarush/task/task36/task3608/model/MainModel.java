@@ -26,31 +26,31 @@ public class MainModel implements Model {
 
     @Override
     public void loadUsers() {
-        List<User> users = getAllUsers();
         modelData.setDisplayDeletedUserList(false);
-        modelData.setUsers(users);
+        modelData.setUsers(getAllUsers());
 
     }
 
     public void loadDeletedUsers() {
-        List<User> users = userService.getAllDeletedUsers();
         modelData.setDisplayDeletedUserList(true);
-        modelData.setUsers(users);
+        modelData.setUsers(userService.getAllDeletedUsers());
     }
 
     public void loadUserById(long userId) {
-        User user = userService.getUsersById(userId);
-        modelData.setActiveUser(user);
+        modelData.setActiveUser(userService.getUsersById(userId));
     }
 
     public void deleteUserById(long id) {
         userService.deleteUser(id);
-        List<User> users = getAllUsers();
-        modelData.setUsers(users);
+        modelData.setUsers(getAllUsers());
     }
 
     private List<User> getAllUsers(){
-        List<User> users = userService.filterOnlyActiveUsers(userService.getUsersBetweenLevels(1, 100));
-        return users;
+        return userService.filterOnlyActiveUsers(userService.getUsersBetweenLevels(1, 100));
+    }
+
+    public void changeUserData(String name, long id, int level){
+        userService.createOrUpdateUser(name, id, level);
+        modelData.setUsers(getAllUsers());
     }
 }
