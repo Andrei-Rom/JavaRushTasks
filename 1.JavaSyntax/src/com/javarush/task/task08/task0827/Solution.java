@@ -1,6 +1,9 @@
 package com.javarush.task.task08.task0827;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /* 
 Работа с датой
@@ -15,6 +18,11 @@ public class Solution {
 
 
         Date yearDate = new Date(date);
+
+        //SimpleDateFormat format = new SimpleDateFormat("MMM dd yyyy", Locale.ENGLISH);
+        //Date yearDate = format.parse(date);
+        //System.out.println(yearDate);
+
         Date startTime = new Date(date);
         startTime.setDate(1);
         startTime.setMonth(0);
