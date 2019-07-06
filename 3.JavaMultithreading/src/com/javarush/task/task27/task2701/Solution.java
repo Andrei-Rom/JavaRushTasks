@@ -12,6 +12,8 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String string = reader.readLine();
         String substring = reader.readLine();
+//        String string = args[0];
+//        String substring = args[1];
 
         if (isSubstringPresent(substring, string)) {
             System.out.println("String: \n" + substring + "\nis present in the string: \n" + string);
@@ -21,20 +23,14 @@ public class Solution {
     }
 
     static boolean isSubstringPresent(String substring, String string) {
-        boolean found = false;
-        int max = string.length() - substring.length();
-
-        for (int i = 0; i <= max; i++) {
-            int length = substring.length();
-            int j = i;
-            int k = 0;
-            while (length-- != 0) {
-                if (string.charAt(j++) == substring.charAt(k++)) {
-                    found = true;
+        for (int i = 0; i <= string.length() - substring.length(); i++) {
+            for (int j = i; string.charAt(j) == substring.charAt(j-i); j++) {
+                if (j == i + substring.length() - 1) {
+                    return true;
                 }
             }
         }
-        return found;
+        return false;
     }
 }
 
