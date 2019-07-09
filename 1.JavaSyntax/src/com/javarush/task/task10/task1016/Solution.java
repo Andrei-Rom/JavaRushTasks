@@ -15,7 +15,7 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         ArrayList<String> words = new ArrayList<String>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             words.add(reader.readLine());
         }
 
@@ -37,7 +37,8 @@ public class Solution {
 
         return result;
     }
-    public static int count (ArrayList<String> list, String word){
+
+    public static int count(ArrayList<String> list, String word) {
         int count = 0;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).equals(word))
