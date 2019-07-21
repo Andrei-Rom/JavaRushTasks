@@ -7,10 +7,18 @@ package com.javarush.task.task30.task3012;
 public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        solution.createExpression(74);
+        solution.createExpression(2);
     }
 
     public void createExpression(int number) {
         //напишите тут ваш код
+        // 1, 3, 9, 27, 81, 243, 729, 2187
+        StringBuilder result = new StringBuilder();
+        result.append(number).append(" =");
+        String[] formats = {"", " + %d", " - %d"};
+        for (int i = number, tri = 1; 0 < i; i = ++i / 3, tri *= 3) {
+            result.append(String.format(formats[i % 3], tri));
+        }
+        System.out.println(result);
     }
 }
