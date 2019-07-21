@@ -13,7 +13,7 @@ public class Figure {
     public void downMaximum() {}
     public boolean isCurrentPositionAvailable() {return true;}
     public void landed() {}
-
+    
     public Figure(int x, int y, int[][] matrix) {
         this.x = x;
         this.y = y;
