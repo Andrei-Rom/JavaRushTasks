@@ -9,11 +9,11 @@ public class ConsoleHelper {
     static String message;
     static int integer;
 
-    static void writeMessage(String message){
+    public static void writeMessage(String message){
         System.out.println(message);
     }
 
-    static String readString() {
+    public static String readString() {
         try {
             message = reader.readLine();
         } catch (IOException e) {
@@ -23,7 +23,7 @@ public class ConsoleHelper {
         return message;
     }
 
-    static int readInt() {
+    public static int readInt() {
         try {
             integer = Integer.parseInt(readString());
         } catch (NumberFormatException e) {
