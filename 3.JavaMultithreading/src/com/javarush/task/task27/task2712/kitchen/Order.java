@@ -22,4 +22,16 @@ public class Order {
         }
         return "Your order: " + dishes.toString() + " of " + tablet.toString();
     }
+
+    public int getTotalCookingTime() {
+        int totalCookingTime = 0;
+        for (Dish dish: dishes) {
+            totalCookingTime += dish.getDuration();
+        }
+        return totalCookingTime;
+    }
+
+    public boolean isEmpty() {
+        return dishes.isEmpty();
+    }
 }
