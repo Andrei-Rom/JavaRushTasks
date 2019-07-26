@@ -35,7 +35,6 @@ public class Tablet extends Observable {
             }
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
-
         }
         return order;
     }
