@@ -49,18 +49,18 @@ public class Client extends Thread {
     }
 
     protected String getServerAddress() {
-        ConsoleHelper.writeMessage("введите адрес сервера");
+        ConsoleHelper.writeMessage("введите адрес сервера (например: localhost)");
         return ConsoleHelper.readString();
     }
 
     protected int getServerPort() {
 
-        ConsoleHelper.writeMessage("введите адрес порта сервера");
+        ConsoleHelper.writeMessage("введите адрес порта сервера (например: 8080)");
         return ConsoleHelper.readInt();
     }
 
     protected String getUserName() {
-        ConsoleHelper.writeMessage("введите имя пользователя");
+        ConsoleHelper.writeMessage("введите имя пользователя (например: Андрей)");
         return ConsoleHelper.readString();
     }
 

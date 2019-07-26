@@ -10,7 +10,7 @@ public class Server {
     private static Map<String, Connection> connectionMap = new ConcurrentHashMap<>();
 
     public static void main(String[] args) {
-        ConsoleHelper.writeMessage("Введи порт сервера");
+        ConsoleHelper.writeMessage("введите номер порта сервера (например: 8080");
 
         try (ServerSocket serverSocket = new ServerSocket(ConsoleHelper.readInt())) {
             ConsoleHelper.writeMessage("сервер запущен");
