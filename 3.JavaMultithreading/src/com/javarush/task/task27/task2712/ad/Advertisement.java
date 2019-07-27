@@ -33,10 +33,11 @@ public class Advertisement {
         return amountPerOneDisplaying * 1000 / duration;
     }
 
-    public void revalidate() {
-        if (hits <= 0) throw new UnsupportedOperationException();
-        else hits--;
-
+    public void revalidate() throws UnsupportedOperationException {
+        if (getHits() <= 0) {
+            throw new UnsupportedOperationException();
+        }
+        hits--;
     }
 
     @Override

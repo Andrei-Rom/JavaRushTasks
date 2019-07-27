@@ -1,6 +1,8 @@
 package com.javarush.task.task27.task2712.ad;
 
 import com.javarush.task.task27.task2712.ConsoleHelper;
+import com.javarush.task.task27.task2712.statistic.StatisticManager;
+import com.javarush.task.task27.task2712.statistic.event.VideoSelectedEventDataRow;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,7 +17,7 @@ public class AdvertisementManager {
         this.timeSeconds = timeSeconds;
     }
 
-    public void processVideos() {
+    public void processVideos(){
 
 
         List<Advertisement> videos = storage.list();
@@ -36,10 +38,12 @@ public class AdvertisementManager {
         long amount = 0;
         int duration = 0;
 
-        for (Advertisement ad : bestAds) {
+        for(Advertisement ad: bestAds){
             amount += ad.getAmountPerOneDisplaying();
             duration += ad.getDuration();
         }
+
+        StatisticManager.getInstance().register(new VideoSelectedEventDataRow(bestAds, amount, duration));
 
         for (Advertisement ad : bestAds) {
             ConsoleHelper.writeMessage(ad.getName() + " is displaying... " +
@@ -47,6 +51,8 @@ public class AdvertisementManager {
                     1000 * ad.getAmountPerOneDisplaying() / ad.getDuration());
             ad.revalidate();
         }
+
+
     }
 
     private class Helper {
